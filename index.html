@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f7f2" />
+  <meta name="description" content="Meet Forma. A beautifully simple calculator for your everyday numbers. Scientific tools, instant answers, and a little room to think." />
+  <title>Forma — A little clarity.</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel="stylesheet" href="/src/ui.css" />
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.9 6.1L20 11l-6.1 1.9L12 19l-1.9-6.1L4 11l6.1-1.9L12 3Z"/><path d="m20 3 .6 2.4L23 6l-2.4.6L20 9l-.6-2.4L17 6l2.4-.6L20 3Z"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 15h10"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-backspace" viewBox="0 0 24 24"><path d="M9 5h11a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-7-7 7-7Z"/><path d="m12 9 6 6m0-6-6 6"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2.6 7.4M3 4v7h7"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C11 3 4 6 4 13a7 7 0 0 0 7 7c7 0 9-8 9-17Z"/><path d="M4 21 15 10"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Forma home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20 20)" fill="currentColor"><rect x="-3" y="-18" width="6" height="36" rx="2"/><rect x="-3" y="-18" width="6" height="36" rx="2" transform="rotate(45)"/><rect x="-3" y="-18" width="6" height="36" rx="2" transform="rotate(90)"/><rect x="-3" y="-18" width="6" height="36" rx="2" transform="rotate(135)"/></g></svg>
+        <span>forma<span class="brand-dot">.</span></span>
+      </a>
+      <div class="header-middle"><span class="status-dot"></span>A little clarity for your everyday.</div>
+      <div class="header-actions">
+        <button class="shortcut-trigger" id="shortcuts-button"><svg class="icon"><use href="#i-keyboard"/></svg><span>Keyboard shortcuts</span><kbd>?</kbd></button>
+        <span class="header-divider"></span>
+        <button class="icon-button theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" title="Switch theme"><svg class="icon"><use href="#i-sun"/></svg></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <div class="eyebrow"><span class="tiny-star">✳</span> LESS NOISE. MORE NUMBERS.</div>
+          <h1 id="page-title">Let’s make it <em>simple.</em></h1>
+          <p>A little space to think. A simpler way to calculate.</p>
+        </div>
+        <div class="intro-note"><span class="note-spark">✳</span><span>Big ideas start with<br><strong>the little things.</strong></span><svg class="note-swoosh" viewBox="0 0 70 30" aria-hidden="true"><path d="M3 6c15 21 39 15 59 5m-8-7 10 6-5 10"/></svg></div>
+      </section>
+
+      <section class="workspace" aria-label="Calculator workspace">
+        <div class="calculator" id="calculator">
+          <div class="calculator-toolbar">
+            <div class="mode-tabs" role="tablist" aria-label="Calculator mode">
+              <button class="mode-tab active" id="standard-mode" role="tab" aria-selected="true" aria-controls="keypad">Standard</button>
+              <button class="mode-tab" id="scientific-mode" role="tab" aria-selected="false" aria-controls="keypad">Scientific<svg class="icon"><use href="#i-spark"/></svg></button>
+            </div>
+            <span class="calculator-label">A CLEARER PERSPECTIVE</span>
+            <button class="angle-toggle" id="angle-toggle" hidden title="Switch angle unit">DEG</button>
+          </div>
+
+          <div class="display" id="display">
+            <div class="display-top"><span id="display-label">LET’S WORK IT OUT</span><button class="icon-button copy-button" id="copy-result" aria-label="Copy result" title="Copy result"><svg class="icon"><use href="#i-copy"/></svg></button></div>
+            <label class="sr-only" for="expression">Calculation expression</label>
+            <input id="expression" class="expression" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-describedby="expression-help" maxlength="512" />
+            <div class="result-line"><span class="result-equals" id="result-equals">=</span><output class="result" id="result" aria-live="polite">0</output></div>
+            <div class="display-bottom"><span id="display-hint"><span class="status-dot"></span> Ready when you are</span><span class="live-badge">LIVE RESULT</span></div>
+            <span class="sr-only" id="expression-help">Type an expression or use the keypad. Press Enter to calculate. Percent divides the preceding value by 100.</span>
+          </div>
+
+          <div class="scientific-keys" id="scientific-keys" hidden>
+            <button class="key key-science" data-value="sin(">sin</button><button class="key key-science" data-value="cos(">cos</button><button class="key key-science" data-value="tan(">tan</button><button class="key key-science" data-value="sqrt(" aria-label="Square root">√</button>
+            <button class="key key-science" data-value="(">(</button><button class="key key-science" data-value=")">)</button><button class="key key-science" data-value="pi" aria-label="Pi">π</button><button class="key key-science" data-value="^" aria-label="Power">x<sup>y</sup></button>
+            <button class="key key-science" data-value="log(">log</button><button class="key key-science" data-value="ln(">ln</button><button class="key key-science" data-value="e" aria-label="Euler's number">e</button><button class="key key-science" data-value="abs(">abs</button>
+          </div>
+
+          <div class="keypad" id="keypad" role="tabpanel" aria-label="Calculator keys">
+            <button class="key key-clear" data-action="clear" title="All clear (Esc)">AC</button>
+            <button class="key key-utility" data-action="sign" aria-label="Change sign">+/−</button>
+            <button class="key key-utility" data-value="%" aria-label="Percent">%</button>
+            <button class="key key-operator" data-value="/" aria-label="Divide">÷</button>
+            <button class="key" data-value="7">7</button><button class="key" data-value="8">8</button><button class="key" data-value="9">9</button><button class="key key-operator" data-value="*" aria-label="Multiply">×</button>
+            <button class="key" data-value="4">4</button><button class="key" data-value="5">5</button><button class="key" data-value="6">6</button><button class="key key-operator" data-value="-" aria-label="Subtract">−</button>
+            <button class="key" data-value="1">1</button><button class="key" data-value="2">2</button><button class="key" data-value="3">3</button><button class="key key-operator" data-value="+" aria-label="Add">+</button>
+            <button class="key key-backspace" data-action="backspace" aria-label="Backspace" title="Delete last character"><svg class="icon"><use href="#i-backspace"/></svg></button><button class="key" data-value="0">0</button><button class="key" data-value="." aria-label="Decimal point">.</button><button class="key key-equals" data-action="equals" aria-label="Equals">=<svg class="equals-spark" viewBox="0 0 24 24"><use href="#i-spark"/></svg></button>
+          </div>
+          <div class="calculator-foot"><svg class="icon"><use href="#i-keyboard"/></svg><span>Your keyboard feels right at home.</span><kbd>enter ↵</kbd></div>
+        </div>
+
+        <aside class="side-column" aria-label="History and calculator tips">
+          <section class="history-panel">
+            <div class="history-header"><h2><svg class="icon"><use href="#i-history"/></svg>History<span class="history-count" id="history-count">0</span></h2><button class="icon-button" id="clear-history" aria-label="Clear history" title="Clear history" disabled><svg class="icon"><use href="#i-trash"/></svg></button></div>
+            <div class="history-content" id="history-content">
+              <div class="history-empty" id="history-empty">
+                <div class="empty-illustration" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="doodle-star">✳</span><div class="paper paper-back"></div><div class="paper paper-front"><span class="paper-line"></span><span class="paper-equation">2 + 2</span><span class="paper-rule"></span><span class="paper-answer">4<span>↗</span></span></div><span class="doodle-plus">+</span><span class="doodle-dot"></span></div>
+                <h3>A fresh start.</h3><p>Your calculations will appear here.<br>A little trail of your thought process.</p><span class="empty-hint">GO ON, MAKE YOUR FIRST MOVE <svg class="icon"><use href="#i-arrow"/></svg></span>
+              </div>
+              <div class="history-list" id="history-list" aria-label="Previous calculations"></div>
+            </div>
+            <div class="history-footer"><span class="status-dot"></span>Saved on this device. Just for you.</div>
+          </section>
+
+          <section class="tip-card"><div class="tip-icon"><svg class="icon"><use href="#i-spark"/></svg></div><div class="tip-body"><span class="tip-label">A SMALL SHORTCUT</span><h3>Less clicking. More flowing.</h3><p>Use your keyboard to keep up with your thoughts. Hit <kbd>enter</kbd> for the answer.</p><button id="tip-shortcuts">Meet your shortcuts <span>↗</span></button></div><span class="tip-decoration" aria-hidden="true">✳</span></section>
+        </aside>
+      </section>
+
+      <footer class="page-footer"><span><svg class="icon"><use href="#i-leaf"/></svg>Thoughtfully simple. Refreshingly useful.</span><button id="about-button">A little about Forma <svg class="icon"><use href="#i-arrow"/></svg></button><span class="footer-signoff">A LITTLE CLARITY GOES A LONG WAY.</span></footer>
+    </main>
+  </div>
+
+  <dialog id="shortcuts-dialog" class="modal"><div class="modal-header"><span class="eyebrow">FIND YOUR FLOW</span><button class="icon-button" data-close-dialog aria-label="Close shortcuts"><svg class="icon"><use href="#i-close"/></svg></button></div><h2>Your keyboard.<br><em>Your shortcut.</em></h2><p>Keep your hands on the keys. We’ll handle the math.</p><dl class="shortcut-list"><div><dt>Numbers & operators</dt><dd><kbd>0–9</kbd><kbd>+ − * /</kbd></dd></div><div><dt>Calculate</dt><dd><kbd>Enter</kbd><kbd>=</kbd></dd></div><div><dt>Start fresh</dt><dd><kbd>Esc</kbd></dd></div><div><dt>Delete a character</dt><dd><kbd>⌫</kbd></dd></div><div><dt>Group an expression</dt><dd><kbd>(</kbd><kbd>)</kbd></dd></div><div><dt>Open these shortcuts</dt><dd><kbd>?</kbd></dd></div></dl><div class="modal-note"><svg class="icon"><use href="#i-info"/></svg>Tip: you can type or paste directly into the expression.</div></dialog>
+  <dialog id="about-dialog" class="modal about-modal"><div class="modal-header"><span class="eyebrow">A LITTLE ABOUT US</span><button class="icon-button" data-close-dialog aria-label="Close about"><svg class="icon"><use href="#i-close"/></svg></button></div><h2>A little less noise.<br><em>A lot more clarity.</em></h2><p>Forma is a quiet space for your everyday math. No distractions, no account, just you and the numbers.</p><div class="about-details"><p><strong>A little more power.</strong> Scientific mode adds trigonometry, powers, logarithms, and more. Tap DEG to switch to radians.</p><p><strong>Percent, made simple.</strong> The % key divides a value by 100. For example, 200 × 10% = 20.</p><p><strong>Yours, privately.</strong> History and your preferred theme stay in this browser. Clear them any time. Numbers are displayed to 12 significant digits; calculations use full precision.</p></div></dialog>
+  <div class="toast" id="toast" role="status"><svg class="icon"><use href="#i-check"/></svg><span></span></div>
+</body>
+</html>
